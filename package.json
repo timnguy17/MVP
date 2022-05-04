@@ -1,0 +1,49 @@
+{
+  "name": "mvp",
+  "version": "1.0.0",
+  "description": "MVP Project",
+  "main": "./server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --mode=development",
+    "build": "webpack --mode=production",
+    "dev": "webpack serve --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timnguy17/MVP.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timnguy17/MVP/issues"
+  },
+  "homepage": "https://github.com/timnguy17/MVP#readme",
+  "dependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-react": "^7.16.7",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@material/menu": "^14.0.0",
+    "@mui/material": "^5.6.4",
+    "axios": "^0.27.2",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1"
+  },
+  "devDependencies": {
+    "dotenv-webpack": "^7.1.0",
+    "eslint": "^8.14.0",
+    "eslint-plugin-react": "^7.29.4",
+    "nodemon": "^2.0.16"
+  }
+}
