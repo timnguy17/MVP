@@ -27,21 +27,12 @@ const SearchBar = (props) => {
     let params = { 'user': searchParams.user, 'platform': searchParams.platform }
     axios.get('/search', { params })
       .then((response) => {
-        console.log('success axios', response)
-        props.setCurrentPlayer(response.data)
+        props.setCurrentPlayer(response.data);
+        props.updateHistory(response.data)
       })
       .catch((err) => {
         console.log('axios error', err)
       })
-    //why doesnt this work?
-    // fetch('/search', { params }).then((response) => {
-    //   console.log('success fetch')
-    //   return response.json();
-    // }).then((data) => {
-    //   console.log(data)
-    // }).catch((err) => {
-    //   console.log('fetch error', err)
-    // })
   }
 
   const handleChange = (event) => {
@@ -52,7 +43,6 @@ const SearchBar = (props) => {
   };
 
   return (
-    console.log(searchParams),
     <form onSubmit={handleSubmit}>
       <Stack direction='row' spacing={2} sx={{ width: 'fit-content' }}>
         <Box >

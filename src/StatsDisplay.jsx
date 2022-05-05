@@ -1,5 +1,4 @@
 import React from 'react';
-import data from './sampleData.js';
 
 import Button from '@mui/material/Button';
 import StarSharpIcon from '@mui/icons-material/StarSharp';
@@ -15,32 +14,23 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: 'center',
   color: 'white',
   border: 'solid',
-  // borderColor: 'red',
 }));
 
 
 
 const StatsDisplay = (props) => {
-  // let data = props.currentPlayer.data;
-
-
-
-  console.log(data);
+  let data = props.currentPlayer.data;
   if (data !== undefined) {
     return (
       data.segments.filter((char) => {
         return char.metadata.isActive === true;
       }).map((stat) => {
-        console.log('stat', stat)
         const overview = data.segments[0].stats;
-        console.log('overviewww', overview)
         return (
           <Box key={stat.attributes.id}
             sx={{
               display: 'grid',
               gap: 1,
-
-
             }}>
             <Grid container spacing={1} direction="row" justifyContent='center' columns='8'>
 
@@ -60,7 +50,6 @@ const StatsDisplay = (props) => {
                 </Grid>
               </Grid>
 
-              {/* <Grid container direction='row' justifyContent='center' spacing={1} > */}
               <Grid item xs={5}>
                 <Item>
                   Player ID: {data.platformInfo.platformUserHandle}
@@ -81,15 +70,14 @@ const StatsDisplay = (props) => {
                 <Item>Level:{overview.level.displayValue}</Item>
               </Grid>
               <Grid item xs={5}>
-                <Item>Total Kills as {stat.metadata.name}: {stat.stats.kills.displayValue}</Item>
+                <Item>Total Kills as {stat.metadata.name}: {stat.stats.kills.displayValue  ? stat.stats.kills.displayValue : 'N/A'}</Item>
               </Grid>
               <Grid item xs={5}>
                 <Item>Lifetime Kills:{overview.kills.displayValue}</Item>
               </Grid>
               <Grid item xs={5}>
-                <Item>Total Damage as {stat.metadata.name}: {stat.stats.damage.displayValue}</Item>
+                <Item>Total Damage as {stat.metadata.name}: {stat.stats.damage ? stat.stats.damage.displayValue : 'N/A'}</Item>
               </Grid>
-              {/* </Grid> */}
             </Grid>
           </Box>
         )
