@@ -10,5 +10,5 @@ MVP Project
 
 -Utilized 'apex.tracker.gg' API to return statistics on player data based on Username/Platform
 -Utilized Material UI/React to create user-friendly interface
--Future development plans include account/login functionality, view history, and mobile scaling
+-Future development plans include account/login functionality with MongoDB, view history, and mobile scaling
 
